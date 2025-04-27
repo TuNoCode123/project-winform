@@ -46,7 +46,6 @@ namespace WinFormsApp3
         public int Id { get; set; }
         public string option_text { get; set; }
     }
-
     public class QuizResult
     {
         public int correctAnswers { get; set; }
@@ -54,8 +53,22 @@ namespace WinFormsApp3
         public int score { get; set; }
         public int percentageLack { get; set; }
         public int uncomplete { get; set; }
+        public List<QuestionResult> result { get; set; }
     }
 
+    public class QuestionResult
+    {
+        public string content { get; set; }
+        public List<OptionResult> options { get; set; }
+        public OptionResult yourAnswer { get; set; }
+    }
+
+    public class OptionResult
+    {
+        public int id { get; set; }
+        public string option_text { get; set; }
+        public bool is_correct { get; set; }
+    }
     public class ApiResponseSubmit
     {
         public int EC { get; set; }
